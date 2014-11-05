@@ -2,24 +2,16 @@
 use strict;
 use Getopt::Long;
 #
-#fastq_phred.pl - Script for judge the fastq's encoding, whether it is phred33 or phred64.
+# fastq_phred.pl - Script for judge the fastq's encoding, whether it is phred33 or phred64.
 #
-#Version 0.2 ( May 19, 2014)
-#Copyright (c) 2014 Wencai Jie (jiewencai<@>qq.com), NJAU, China.
+# Version: 0.3 ( May 19, 2014)
+# Author: Wencai Jie (jiewencai<@>qq.com), NJAU, China.
 #
-# This software is provided 'as-is', without any express or implied
-# warranty. In no event will the authors be held liable for any damages
-# arising from the use of this software.
+# Permission is granted to anyone to use this software for any purpose, without
+# any express or implied warranty. In no event will the authors be held liable 
+# for any damages arising from the use of this software.
 #
-# Permission is granted to anyone to use this software for any purpose,
-# and to alter it and redistribute it freely, subject to the following 
-# restrictions:
-#
-# 1. The origin of this software must not be misrepresented; 
-# 2. Altered source versions must be plainly marked as such, and must not be
-#    misrepresented as being the original software.
-# 3. This notice may not be removed or altered from any source distribution.
-#
+#NJAU
 
 #Get options.
 my ($help, $print_score, $detail, $print_ascii, $reads_num, $reads_start_arg, $reads_end_arg);
@@ -117,6 +109,7 @@ sub main{
 	#print ASCII.
 	if ($print_ascii){
 		print "\n","."x50," ASCII Value: $filename ","."x50,"\n";
+		print "ASCII\tCounts\n";
 		&print_array_of_array(\@all_ascii, 0, $detail);
 		next;
 	}
@@ -145,6 +138,7 @@ sub main{
 	#print score.
 	if ($print_score){
 		print "\n","."x50," Quality Score: $filename ","."x50,"\n";
+		print "Score\tCounts\n";
 		&print_array_of_array(\@all_ascii, $Q, $detail);
 	}
 
