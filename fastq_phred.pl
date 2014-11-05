@@ -11,7 +11,6 @@ use Getopt::Long;
 # any express or implied warranty. In no event will the authors be held liable 
 # for any damages arising from the use of this software.
 #
-#NJAU
 
 #Get options.
 my ($help, $print_score, $detail, $print_ascii, $reads_num, $reads_start_arg, $reads_end_arg);
